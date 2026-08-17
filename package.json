@@ -1,0 +1,70 @@
+{
+    "name": "n8n-nodes-tareno",
+    "version": "1.8.2",
+    "description": "n8n community node for publishing and scheduling social media posts with Tareno",
+    "license": "MIT",
+    "homepage": "https://tareno.co",
+    "author": {
+        "name": "Tareno",
+        "email": "support@tareno.co"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TarenoAI/n8n-nodes-tareno.git"
+    },
+    "bugs": {
+        "url": "https://github.com/TarenoAI/n8n-nodes-tareno/issues"
+    },
+    "keywords": [
+        "n8n-community-node-package",
+        "n8n",
+        "n8n-node",
+        "n8n-nodes",
+        "social media",
+        "tareno",
+        "automation",
+        "publishing",
+        "scheduling",
+        "instagram",
+        "facebook",
+        "youtube",
+        "tiktok",
+        "twitter",
+        "linkedin",
+        "pinterest",
+        "threads"
+    ],
+    "main": "dist/nodes/Tareno/Tareno.node.js",
+    "scripts": {
+        "build": "n8n-node build && npm run copy-icons",
+        "copy-icons": "cp nodes/Tareno/*.svg nodes/Tareno/*.png dist/nodes/Tareno/ 2>/dev/null || true",
+        "dev": "n8n-node dev",
+        "lint": "rm -rf dist && n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run lint && npm run build"
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "engines": {
+        "node": ">=20.19"
+    },
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "credentials": [
+            "dist/credentials/TarenoApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/Tareno/Tareno.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": "^0.38.7",
+        "@types/node": "^18.0.0",
+        "n8n-workflow": "^2.16.0",
+        "typescript": "^5.0.0"
+    }
+}
