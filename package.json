@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-tareno",
-    "version": "1.8.2",
+    "version": "1.8.3",
     "description": "n8n community node for publishing and scheduling social media posts with Tareno",
     "license": "MIT",
     "homepage": "https://tareno.co",
@@ -50,7 +50,7 @@
         "LICENSE"
     ],
     "engines": {
-        "node": ">=20.19"
+        "node": ">=22.0.0"
     },
     "n8n": {
         "n8nNodesApiVersion": 1,
