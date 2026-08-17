@@ -3,11 +3,16 @@ import {
     ICredentialTestRequest,
     ICredentialType,
     INodeProperties,
+    Icon,
 } from 'n8n-workflow';
 
 export class TarenoApi implements ICredentialType {
     name = 'tarenoApi';
     displayName = 'Tareno API';
+    icon: Icon = {
+        light: 'file:tareno.svg',
+        dark: 'file:tareno.dark.svg',
+    };
     documentationUrl = 'https://tareno.co/docs/api';
 
     properties: INodeProperties[] = [
@@ -22,13 +27,6 @@ export class TarenoApi implements ICredentialType {
             required: true,
             description: 'Your Tareno API Key. Get one from Settings → API in your Tareno dashboard.',
         },
-        {
-            displayName: 'Base URL',
-            name: 'baseUrl',
-            type: 'string',
-            default: 'https://tareno.co',
-            description: 'The base URL of the Tareno API',
-        },
     ];
 
     authenticate: IAuthenticateGeneric = {
@@ -42,8 +40,7 @@ export class TarenoApi implements ICredentialType {
 
     test: ICredentialTestRequest = {
         request: {
-            baseURL: '={{$credentials.baseUrl}}',
-            url: '/api/external/usage',
+            url: 'https://tareno.co/api/external/usage',
             method: 'GET',
         },
     };
