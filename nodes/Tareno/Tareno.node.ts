@@ -136,8 +136,18 @@ export class Tareno implements INodeType {
                 noDataExpression: true,
                 displayOptions: { show: { resource: ['post'] } },
                 options: [
-                    { name: 'Publish Now', value: 'publish', action: 'Publish immediately' },
-                    { name: 'Schedule', value: 'schedule', action: 'Schedule for later' },
+                    {
+                        name: 'Publish',
+                        value: 'publish',
+                        action: 'Publish post immediately',
+                        description: 'Publish a social media post immediately',
+                    },
+                    {
+                        name: 'Schedule',
+                        value: 'schedule',
+                        action: 'Schedule post',
+                        description: 'Schedule a social media post for later',
+                    },
                 ],
                 default: 'publish',
             },
@@ -364,8 +374,18 @@ export class Tareno implements INodeType {
                 noDataExpression: true,
                 displayOptions: { show: { resource: ['media'] } },
                 options: [
-                    { name: 'Upload', value: 'upload', action: 'Upload file to library' },
-                    { name: 'List', value: 'list', action: 'List files in library' },
+                    {
+                        name: 'Upload',
+                        value: 'upload',
+                        action: 'Upload media file',
+                        description: 'Upload a media file to the Tareno Media Library',
+                    },
+                    {
+                        name: 'Get Many',
+                        value: 'list',
+                        action: 'Get many media files',
+                        description: 'Retrieve a list of media files from the Tareno Media Library',
+                    },
                 ],
                 default: 'upload',
             },
@@ -389,6 +409,7 @@ export class Tareno implements INodeType {
                 default: 'data',
                 required: true,
                 displayOptions: { show: { resource: ['media'], operation: ['upload'], uploadMode: ['file'] } },
+                description: 'Name of the binary property containing the media file',
             },
 
             {
@@ -398,6 +419,8 @@ export class Tareno implements INodeType {
                 required: true,
                 displayOptions: { show: { resource: ['media'], operation: ['upload'], uploadMode: ['url'] } },
                 default: '',
+                placeholder: 'e.g. https://example.com/video.mp4',
+                description: 'Public URL of the media file to add to the Tareno Media Library',
             },
 
             {
@@ -406,6 +429,8 @@ export class Tareno implements INodeType {
                 type: 'string',
                 displayOptions: { show: { resource: ['media'], operation: ['upload'] } },
                 default: '',
+                placeholder: 'e.g. campaign-video.mp4',
+                description: 'Optional file name to display in the Tareno Media Library',
             },
         ],
     };
