@@ -10,8 +10,8 @@ export class TarenoApi implements ICredentialType {
     name = 'tarenoApi';
     displayName = 'Tareno API';
     icon: Icon = {
-        light: 'file:tareno.svg',
-        dark: 'file:tareno.dark.svg',
+        light: 'file:tareno-logo.svg',
+        dark: 'file:tareno-logo.dark.svg',
     };
     documentationUrl = 'https://tareno.co/docs/api';
 

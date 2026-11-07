@@ -115,8 +115,8 @@ export class Tareno implements INodeType {
         displayName: 'Tareno',
         name: 'tareno',
         icon: {
-            light: 'file:tareno.svg',
-            dark: 'file:tareno.dark.svg',
+            light: 'file:tareno-logo.svg',
+            dark: 'file:tareno-logo.dark.svg',
         },
         group: ['transform'],
         version: 1,
