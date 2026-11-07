@@ -144,6 +144,26 @@ export class Tareno implements INodeType {
             },
 
             // ========================
+            // ACCOUNT RESOURCE
+            // ========================
+            {
+                displayName: 'Operation',
+                name: 'operation',
+                type: 'options',
+                noDataExpression: true,
+                displayOptions: { show: { resource: ['account'] } },
+                options: [
+                    {
+                        name: 'Get Many',
+                        value: 'list',
+                        action: 'Get many connected accounts',
+                        description: 'Retrieve the social accounts connected to Tareno',
+                    },
+                ],
+                default: 'list',
+            },
+
+            // ========================
             // POST RESOURCE
             // ========================
             {
